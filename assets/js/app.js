@@ -5,11 +5,11 @@
 // Jogo da velha:
 
 // 1 Checar possibilidade de vitória
-// 2 Se o opotente ocupar 2 casas seguidas, ocupe a terceira
+// 2 Marcando pra não perder
 // 3 Se o humano puder sinucar
 // 4 se a IA puder sinucar
 // 5 Se o espaço do centro estiver vazio, marque lá
-// 6 Se o opotente preencheu uma quina, marque a quina contrária.
+// 6 Marcando a contrária.
 // 7 Se tiver uma quina vazia, preencha.
 // 8 Marque aleatoriamente um espaço vazio.
 
@@ -51,16 +51,19 @@ function iaPensar() {
 					iaIdeia = iaCasasAnalisadas[0];
 					iaLinha = 9;
 					passarTurno();
+					console.log("Checar possibilidade de vitória");
 				} else {
 					if (tabuleiro[iaCasasAnalisadas[1]] == 0) {
 						iaIdeia = iaCasasAnalisadas[1];
 						iaLinha = 9;
 						passarTurno();
+						console.log("Checar possibilidade de vitória");
 					} else {
 						if (tabuleiro[iaCasasAnalisadas[2]] == 0) {
 							iaIdeia = iaCasasAnalisadas[2];
 							iaLinha = 9;
 							passarTurno();
+							console.log("Checar possibilidade de vitória");
 						}
 					}
 				}
@@ -71,7 +74,7 @@ function iaPensar() {
 
 
 
-	// 2 Se o opotente ocupar 2 casas seguidas, ocupe a terceira
+	// 2 Marcando pra não perder
 	if (turno == 3) {
 		for (iaLinha = 1; iaLinha < 9; iaLinha++ ) {
 			casasAnalisadas();
@@ -83,16 +86,19 @@ function iaPensar() {
 					iaIdeia = iaCasasAnalisadas[0];
 					iaLinha = 9;
 					passarTurno();
+					console.log("Marcando pra não perder");
 				} else {
 					if (tabuleiro[iaCasasAnalisadas[1]] == 0) {
 						iaIdeia = iaCasasAnalisadas[1];
 						iaLinha = 9;
 						passarTurno();
+						console.log("Marcando pra não perder");
 					} else {
 						if (tabuleiro[iaCasasAnalisadas[2]] == 0) {
 							iaIdeia = iaCasasAnalisadas[2];
 							iaLinha = 9;
 							passarTurno();
+							console.log("Marcando pra não perder");
 						}
 					}
 				}
@@ -134,6 +140,7 @@ function iaPensar() {
 				iaLinha = 9;
 				iaCasas = 9;
 				passarTurno();
+				console.log("Se o humano puder sinucar");
 			}
 		}
 	}
@@ -171,15 +178,16 @@ function iaPensar() {
 				iaLinha = 9;
 				iaCasas = 9;
 				passarTurno();
+				console.log("Se a ia puder sinucar");
 			}
 		}
 	}
 
 
 
-	// 5 Se o opotente preencheu uma quina, marque a quina contrária.
+	// 5 Marcando a contrária.
 	if (turno == 3) {
-		for (iaLinha = 7; iaLinha < 9; iaLinha++ ) {
+		for (iaLinha = 1; iaLinha < 9; iaLinha++ ) {
 			casasAnalisadas();
 			
 			// Analisando
@@ -189,11 +197,13 @@ function iaPensar() {
 					iaIdeia = iaCasasAnalisadas[0];
 					iaLinha = 9;
 					passarTurno();
+					console.log("Marcando a contrária.");
 				} else {
 					if (tabuleiro[iaCasasAnalisadas[2]] == 0 && tabuleiro[iaCasasAnalisadas[1]] == 0) {
 						iaIdeia = iaCasasAnalisadas[2];
 						iaLinha = 9;
 						passarTurno();
+						console.log("Marcando a contrária.");
 					}
 				}
 			}
@@ -214,11 +224,13 @@ function iaPensar() {
 					iaIdeia = iaCasasAnalisadas[0];
 					iaLinha = 9;
 					passarTurno();
+					console.log("Se tiver uma quina vazia, preencha.");
 				} else {
 					if (tabuleiro[iaCasasAnalisadas[2]] == 0) {
 						iaIdeia = iaCasasAnalisadas[2];
 						iaLinha = 9;
 						passarTurno();
+						console.log("Se tiver uma quina vazia, preencha.");
 					}
 				}
 			}
@@ -231,6 +243,7 @@ function iaPensar() {
 		if (tabuleiro[4] == 0) {
 			iaIdeia = 4;
 			passarTurno();
+			console.log("Se o espaço do centro estiver vazio, marque lá");
 		}
 	}
 
@@ -244,22 +257,29 @@ function iaPensar() {
 			if (tabuleiro[iaCasasAnalisadas[0]] == 0) {
 				iaIdeia = iaCasasAnalisadas[0];
 				iaLinha = 9;
-				passarTurno()
+				passarTurno();
+				console.log("Marque aleatoriamente um espaço vazio.");
 			} else {
 				if (tabuleiro[iaCasasAnalisadas[1]] == 0) {
 					iaIdeia = iaCasasAnalisadas[1];
 					iaLinha = 9;
-					passarTurno()
+					passarTurno();
+					console.log("Marque aleatoriamente um espaço vazio.");
 				} else {
 					if (tabuleiro[iaCasasAnalisadas[2]] == 0) {
 						iaIdeia = iaCasasAnalisadas[2];
 						iaLinha = 9;
-						passarTurno()
+						passarTurno();
+						console.log("Marque aleatoriamente um espaço vazio.");
 					}
 				}
 			}
 		}
 	}
+
+	// Interface
+	$(".tic-casa-"+iaIdeia).html("X").addClass("tic-ia");
+	console.log("Ia Marcou "+iaIdeia);
 }
 
 function casasAnalisadas() {
@@ -317,13 +337,11 @@ function passarTurno() {
 	if (turno == 3) {
 		tabuleiro[iaIdeia] = 3;
 		turno = 30;
-		mostrar();
-		console.log("IA Marcou "+iaIdeia+". Agora é o turno do Jogador");
+		
 	} else {
 		if (turno == 30) {
 			turno = 3;
-			mostrar();
-			console.log("Agora é o turno da IA");
+			
 		}
 
 	}
@@ -337,35 +355,6 @@ function humanoMarcar(local) {
 	}
 }
 
-function mostrar() {
-	tabuleiroMostrar = new Array("","","","","","","","","");
-
-
-	for (iaContar = 0; iaContar < 9; iaContar++ ) {
-		if (tabuleiro[iaContar] == 3) {
-			tabuleiroMostrar[iaContar] = " X";
-		}
-
-		if (tabuleiro[iaContar] == 30) {
-			tabuleiroMostrar[iaContar] = " O";
-		}
-
-		if (tabuleiro[iaContar] == 0) {
-			tabuleiroMostrar[iaContar] = " _";
-		}
-	}
-
-	console.log(tabuleiroMostrar[0]+tabuleiroMostrar[1]+tabuleiroMostrar[2]);
-	console.log(tabuleiroMostrar[3]+tabuleiroMostrar[4]+tabuleiroMostrar[5]);
-	console.log(tabuleiroMostrar[6]+tabuleiroMostrar[7]+tabuleiroMostrar[8]);
-
-	// Interface
-
-	$(".tic-casa-"+iaIdeia).html("X").addClass("tic-ia");
-
-}
-
-
 // Começando
 
 
@@ -374,8 +363,7 @@ $(function(){
 	$(".tic-casa").click(function(){
 		var casa = Number($(this).attr("casa"));
 		var conteudo = $(this).html();
-		console.log(casa);
-		console.log(conteudo);
+		console.log("Humano marcou "+casa);
 
 		if (conteudo == "" || conteudo == undefined) {
 			humanoMarcar(casa);
