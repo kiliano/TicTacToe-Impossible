@@ -133,22 +133,18 @@ function iaPensar() {
 			
 			// Analisando
 			var linhaAnalisada = tabuleiro[iaCasasAnalisadas[0]]+tabuleiro[iaCasasAnalisadas[1]]+tabuleiro[iaCasasAnalisadas[2]];
-			console.log("Marcando lado contraro - "+iaLinha);
-
-			if (linhaAnalisada <= 33) {
+			if (linhaAnalisada <= 33 && linhaAnalisada > 3) {
 				if (tabuleiro[iaCasasAnalisadas[0]] == 0) {
 					iaIdeia = iaCasasAnalisadas[0];
 					console.log(iaIdeia);
 					iaLinha = 9;
 					passarTurno(30);
-					console.log("Opcao1");
 				} else {
 					if (tabuleiro[iaCasasAnalisadas[2]] == 0) {
 						iaIdeia = iaCasasAnalisadas[2];
 						console.log(iaIdeia);
 						iaLinha = 9;
 						passarTurno(30);
-						console.log("Opcao2");
 					}
 				}
 			}
