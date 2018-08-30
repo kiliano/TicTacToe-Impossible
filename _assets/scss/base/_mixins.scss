@@ -1,0 +1,111 @@
+@function calculateREM($font-size) {
+    @return $font-size / 16px;
+}
+
+@mixin clearfix {
+    &:after,
+    &:before {
+        content: "";
+        clear: both;
+        display: table;
+    }
+}
+
+@mixin setPlaceholder($color, $font-size: "", $font-weight: "", $font-style: "") {
+    ::-webkit-input-placeholder {
+        color: $color;
+
+        @if $font-style != "" { font-style: $font-style; }
+        @if $font-weight != "" { font-weight: $font-weight; }
+        @if $font-size != "" { @include setFontSize($font-size); }
+
+        @include setProperty(transition, all 0.3s);
+    }
+
+    ::-moz-placeholder {
+        color: $color;
+
+        @if $font-style != "" { font-weight: $font-style; }
+        @if $font-weight != "" { font-weight: $font-weight; }
+        @if $font-size != "" { @include setFontSize($font-size); }
+
+        @include setProperty(transition, all 0.3s);
+    }
+
+    :-ms-input-placeholder {
+
+        color: $color;
+
+        @if $font-style != "" { font-weight: $font-style; }
+        @if $font-weight != "" { font-weight: $font-weight; }
+        @if $font-size != "" { @include setFontSize($font-size); }
+
+        @include setProperty(transition, all 0.3s);
+    }
+
+    :-moz-placeholder {
+        color: $color;
+
+        @if $font-style != "" { font-weight: $font-style; }
+        @if $font-weight != "" { font-weight: $font-weight; }
+        @if $font-size != "" { @include setFontSize($font-size); }
+
+        @include setProperty(transition, all 0.3s);
+    }
+}
+
+@mixin centerContent {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+@mixin ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+@mixin setProperty($property, $value) {
+
+    @if ( type-of($value) == "string" ) {
+        $value: unquote($value);
+    } 
+
+    #{$property}: $value;
+    -ms-#{$property}: $value;
+    -moz-#{$property}: $value;
+    -webkit-#{$property}: $value;
+}
+
+@mixin absoluteAlignment($width, $height) {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    margin-top: calc( -#{$height} / 2 );
+    margin-left: calc( -#{$width}/ 2 );
+}
+
+@mixin setFontSize($font-size) {
+    font-size: $font-size;
+    font-size: unquote("#{calculateREM($font-size)}rem");
+}
+
+@mixin setTypography($font-size, $color: "", $font-weight: "", $text-transform: "", $font-style: "") {
+
+    @include setFontSize($font-size);
+
+    @if $text-transform != "" { text-transform: $text-transform; }
+    @if $font-weight != "" { font-weight: $font-weight; }
+    @if $font-style != "" { font-style: $font-style; }
+    @if $color != "" { color: $color; }
+}
+
+@mixin setCustomBtn($width, $height: "", $padding: "", $line-height: "") {
+
+    @if $height != "" { height: $height; }
+    @if $padding != "" { padding: $padding;  }
+    @if $line-height != "" { line-height: $line-height; }
+
+    width: $width;
+    max-width: 100%;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	
+	<title>Título</title>
+	
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IT=edge,chrome=IE8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<meta name="theme-color" content="#fff">
+	<meta name="msapplication-TileColor" content="#fff">
+	
+	<link rel="canonical" href="http://"/>
+
+	<link rel="icon" href="images/favicon/favicon.ico" />
+	<link rel="shortcut icon" href="images/favicon/favicon.ico" />
+	<link rel="apple-touch-icon" href="images/favicon/favicon.ico"/>
+
+	<meta name="keywords" content="Keywords" />
+
+	<meta name="msapplication-navbutton-color" content="#fff"/>
+	<meta name="msapplication-tooltip" content="Descrição do site.">
+
+	<meta name="apple-mobile-web-app-status-bar-style" content="#fff"/>
+
+	<meta name="description" content="Descrição"/>
+	<meta name="author" content="Autor"/>
+
+	<meta name="robots" content="index/follow"/>
+	<meta name="googlebot" content="index/follow"/>
+
+	<!-- Google + -->
+
+	<link rel="author" href="">
+	<link rel="publisher" href="">
+
+	<meta itemprop="name" content="">
+	<meta itemprop="description" content="">
+	<meta itemprop="image" content="">
+
+	<!-- Facebook -->
+
+	<meta property="og:type" content="website"/>
+	<meta property="og:title" content=""/>
+	<meta property="og:url" content="http://"/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:image" content="images/social.png"/>
+	<meta property="og:description" content="Descrição"/>
+	<meta property="og:locale" content="pt_BR"/>
+
+	<!-- Twitter -->
+
+	<meta name="twitter:card" content="summary"/>
+	<meta name="twitter:title" content="Nome do site"/>
+	<meta name="twitter:description" content="Descrição"/>
+	<meta name="twitter:creator" content="Autor"/>
+	<meta name="twitter:image" content="images/social.png"/>
+
+	<!-- Polyfill IE 8 -->
+
+	<!--[if IE 8]><script src="js/vendor/html5shiv.min.js"></script><![endif]-->
+	<!--[if IE 8]><script src="js/vendor/selectivizr-min.js"></script><![endif]-->
+
+
+	<!-- CSS assíncrono -->
+
+	<script type="text/javascript">
+		(function(w){"use strict";var loadCSS=function(href,before,media){var doc=w.document;var ss=doc.createElement("link");var ref;if(before){ref=before}else{var refs=(doc.body||doc.getElementsByTagName("head")[0]).childNodes;ref=refs[refs.length-1]}var sheets=doc.styleSheets;ss.rel="stylesheet";ss.href=href;ss.media="only x";function ready(cb){if(doc.body){return cb()}setTimeout(function(){ready(cb)})}ready(function(){ref.parentNode.insertBefore(ss,(before?ref:ref.nextSibling))});var onloadcssdefined=function(cb){var resolvedHref=ss.href;var i=sheets.length;while(i--){if(sheets[i].href===resolvedHref){return cb()}}
+			setTimeout(function(){onloadcssdefined(cb)})};function loadCB(){if(ss.addEventListener){ss.removeEventListener("load",loadCB)}ss.media=media||"all"}if(ss.addEventListener){ss.addEventListener("load",loadCB)}ss.onloadcssdefined=onloadcssdefined;onloadcssdefined(loadCB);return ss};if(typeof exports!=="undefined"){exports.loadCSS=loadCSS}
+			else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this));
+
+		!function(t){if(t.loadCSS){var e=loadCSS.relpreload={};if(e.support=function(){try{return t.document.createElement("link").relList.supports("preload")}catch(e){return!1}},e.poly=function(){for(var e=t.document.getElementsByTagName("link"),r=0;r<e.length;r++){var n=e[r];"preload"===n.rel&&"style"===n.getAttribute("as")&&(t.loadCSS(n.href,n,n.getAttribute("media")),n.rel=null)}},!e.support()){e.poly();var r=t.setInterval(e.poly,300);t.addEventListener&&t.addEventListener("load",function(){e.poly(),t.clearInterval(r)}),t.attachEvent&&t.attachEvent("onload",function(){t.clearInterval(r)})}}}(this);
+	</script>
+
+
+</head>
+<body>
+
+	<header class="dg-header" role="banner"></header>
+
+	<main role="main"></main>
+
+	<footer class="dg-footer" role="contentinfo"></footer>
+
+</body>
+</html>
