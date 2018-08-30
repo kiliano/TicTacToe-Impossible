@@ -177,15 +177,7 @@ function iaPensar() {
 
 
 
-	// 5 Se o espaço do centro estiver vazio, marque lá
-	if (turno == 3) {
-		if (tabuleiro[4] == 0) {
-			iaIdeia = 4;
-			passarTurno();
-		}
-	}
-
-	// 6 Se o opotente preencheu uma quina, marque a quina contrária.
+	// 5 Se o opotente preencheu uma quina, marque a quina contrária.
 	if (turno == 3) {
 		for (iaLinha = 7; iaLinha < 9; iaLinha++ ) {
 			casasAnalisadas();
@@ -210,7 +202,7 @@ function iaPensar() {
 	}
 
 
-	// 7 Se tiver uma quina vazia, preencha.
+	// 6 Se tiver uma quina vazia, preencha.
 	if (turno == 3) {
 		for (iaLinha = 7; iaLinha < 9; iaLinha++ ) {
 			casasAnalisadas();
@@ -231,6 +223,14 @@ function iaPensar() {
 				}
 			}
 
+		}
+	}
+
+	// 7 Se o espaço do centro estiver vazio, marque lá
+	if (turno == 3) {
+		if (tabuleiro[4] == 0) {
+			iaIdeia = 4;
+			passarTurno();
 		}
 	}
 
