@@ -107,43 +107,6 @@ function iaPensar() {
 		}
 	}
 
-	// 3 Se o humano puder sinucar
-
-	if (turno == 3) {
-		sinucar = new Array(0,0,0,0,0,0,0,0,0);
-
-		for (iaLinha = 1; iaLinha < 9; iaLinha++ ) {
-			casasAnalisadas();
-			
-			// Analisando
-			var linhaAnalisada = tabuleiro[iaCasasAnalisadas[0]]+tabuleiro[iaCasasAnalisadas[1]]+tabuleiro[iaCasasAnalisadas[2]];
-			if (linhaAnalisada == 30) {
-				if (tabuleiro[iaCasasAnalisadas[0]] == 0) {
-					sinucar[iaCasasAnalisadas[0]] = sinucar[iaCasasAnalisadas[0]]+1;
-				}
-
-				if (tabuleiro[iaCasasAnalisadas[1]] == 0) {
-					sinucar[iaCasasAnalisadas[1]] = sinucar[iaCasasAnalisadas[1]]+1;
-				}
-
-				if (tabuleiro[iaCasasAnalisadas[2]] == 0) {
-					sinucar[iaCasasAnalisadas[2]] = sinucar[iaCasasAnalisadas[2]]+1;
-				}
-			}
-		}
-
-		for (iaCasas = 0; iaCasas < 9; iaCasas++ ) {
-			casasAnalisadas();
-			// Analisando
-			if (sinucar[iaCasas] > 1) {
-				iaIdeia = iaCasas;
-				iaLinha = 9;
-				iaCasas = 9;
-				passarTurno();
-				console.log("Se o humano puder sinucar");
-			}
-		}
-	}
 
 	// 4 Se a ia puder sinucar
 
@@ -179,6 +142,44 @@ function iaPensar() {
 				iaCasas = 9;
 				passarTurno();
 				console.log("Se a ia puder sinucar");
+			}
+		}
+	}
+
+	// 3 Se o humano puder sinucar
+
+	if (turno == 3) {
+		sinucar = new Array(0,0,0,0,0,0,0,0,0);
+
+		for (iaLinha = 1; iaLinha < 9; iaLinha++ ) {
+			casasAnalisadas();
+			
+			// Analisando
+			var linhaAnalisada = tabuleiro[iaCasasAnalisadas[0]]+tabuleiro[iaCasasAnalisadas[1]]+tabuleiro[iaCasasAnalisadas[2]];
+			if (linhaAnalisada == 30) {
+				if (tabuleiro[iaCasasAnalisadas[0]] == 0) {
+					sinucar[iaCasasAnalisadas[0]] = sinucar[iaCasasAnalisadas[0]]+1;
+				}
+
+				if (tabuleiro[iaCasasAnalisadas[1]] == 0) {
+					sinucar[iaCasasAnalisadas[1]] = sinucar[iaCasasAnalisadas[1]]+1;
+				}
+
+				if (tabuleiro[iaCasasAnalisadas[2]] == 0) {
+					sinucar[iaCasasAnalisadas[2]] = sinucar[iaCasasAnalisadas[2]]+1;
+				}
+			}
+		}
+
+		for (iaCasas = 0; iaCasas < 9; iaCasas++ ) {
+			casasAnalisadas();
+			// Analisando
+			if (sinucar[iaCasas] > 1) {
+				iaIdeia = iaCasas;
+				iaLinha = 9;
+				iaCasas = 9;
+				passarTurno();
+				console.log("Se o humano puder sinucar");
 			}
 		}
 	}
