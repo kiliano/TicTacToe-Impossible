@@ -1,0 +1,23 @@
+# Created by https://www.gitignore.io/
+
+### Sass ###
+.sass-cache/
+*.css.map
+
+### backups ###
+*.rar
+*.zip
+*.pdf
+*.iso
+*.bak
+
+### Cache ###
+assets/scss/sass-cache/
+
+### Projetos ###
+imagens/
+Arquivos/
+CacheSite/
+
+
+# End of https://www.gitignore.io/

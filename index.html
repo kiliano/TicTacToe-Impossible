@@ -60,20 +60,20 @@
 	<meta name="twitter:creator" content="Autor"/>
 	<meta name="twitter:image" content="images/social.png"/>
 
+	<!-- CSS -->
+	<link rel="stylesheet" href="assets/css/app.css?v=0.1">
+
+	<!-- JS -->
+	<!-- Jquery improvizado -->
+	<script type='text/javascript' src='assets/js/jquery.js?v=0.1'></script>
+	<script type='text/javascript' src='assets/js/app.js?v=0.1'></script>
+
 	<!-- Polyfill IE 8 -->
 
 	<!--[if IE 8]><script src="js/vendor/html5shiv.min.js"></script><![endif]-->
 	<!--[if IE 8]><script src="js/vendor/selectivizr-min.js"></script><![endif]-->
 
 
-	<!-- CSS assíncrono -->
-	<script type="text/javascript">
-		(function(w){"use strict";var loadCSS=function(href,before,media){var doc=w.document;var ss=doc.createElement("link");var ref;if(before){ref=before}else{var refs=(doc.body||doc.getElementsByTagName("head")[0]).childNodes;ref=refs[refs.length-1]}var sheets=doc.styleSheets;ss.rel="stylesheet";ss.href=href;ss.media="only x";function ready(cb){if(doc.body){return cb()}setTimeout(function(){ready(cb)})}ready(function(){ref.parentNode.insertBefore(ss,(before?ref:ref.nextSibling))});var onloadcssdefined=function(cb){var resolvedHref=ss.href;var i=sheets.length;while(i--){if(sheets[i].href===resolvedHref){return cb()}}
-			setTimeout(function(){onloadcssdefined(cb)})};function loadCB(){if(ss.addEventListener){ss.removeEventListener("load",loadCB)}ss.media=media||"all"}if(ss.addEventListener){ss.addEventListener("load",loadCB)}ss.onloadcssdefined=onloadcssdefined;onloadcssdefined(loadCB);return ss};if(typeof exports!=="undefined"){exports.loadCSS=loadCSS}
-			else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this));
-
-		!function(t){if(t.loadCSS){var e=loadCSS.relpreload={};if(e.support=function(){try{return t.document.createElement("link").relList.supports("preload")}catch(e){return!1}},e.poly=function(){for(var e=t.document.getElementsByTagName("link"),r=0;r<e.length;r++){var n=e[r];"preload"===n.rel&&"style"===n.getAttribute("as")&&(t.loadCSS(n.href,n,n.getAttribute("media")),n.rel=null)}},!e.support()){e.poly();var r=t.setInterval(e.poly,300);t.addEventListener&&t.addEventListener("load",function(){e.poly(),t.clearInterval(r)}),t.attachEvent&&t.attachEvent("onload",function(){t.clearInterval(r)})}}}(this);
-	</script>
 
 
 </head>
@@ -81,7 +81,29 @@
 
 	<header class="dg-header" role="banner"></header>
 
-	<main class="dg-main" role="main"></main>
+	<main class="dg-main" role="main">
+		
+		<div class="tic-box">
+			<div class="tic-linha">
+				<a href="javascript:void(0)" casa="0" class="tic-casa tic-casa-0"></a>
+				<a href="javascript:void(0)" casa="1" class="tic-casa tic-casa-1"></a>
+				<a href="javascript:void(0)" casa="2" class="tic-casa tic-casa-2"></a>
+			</div>
+
+			<div class="tic-linha">
+				<a href="javascript:void(0)" casa="3" class="tic-casa tic-casa-3"></a>
+				<a href="javascript:void(0)" casa="4" class="tic-casa tic-casa-4"></a>
+				<a href="javascript:void(0)" casa="5" class="tic-casa tic-casa-5"></a>
+			</div>
+
+			<div class="tic-linha">
+				<a href="javascript:void(0)" casa="6" class="tic-casa tic-casa-6"></a>
+				<a href="javascript:void(0)" casa="7" class="tic-casa tic-casa-7"></a>
+				<a href="javascript:void(0)" casa="8" class="tic-casa tic-casa-8"></a>
+			</div>
+		</div>
+
+	</main>
 
 	<footer class="dg-footer" role="contentinfo"></footer>
 

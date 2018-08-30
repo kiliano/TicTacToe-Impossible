@@ -1,0 +1,47 @@
+.tic-box {
+    background: #c8c8c8;
+    float: left;
+    position: absolute;
+    left: 49%;
+    top: 49%;
+}
+
+.tic-casa {
+    float: left;
+    background: #fff;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    margin: 1px;
+    color: #333;
+    font-weight: bold;
+    
+    &:hover {
+        background: #e0e0e0;
+        text-decoration: none;
+    }
+    
+    &:focus {
+        background: #fff;
+        text-decoration: none;
+    }
+    
+}
+
+.tic-linha {
+    &:before, &:after {
+	    content: "";    
+	    display: block;
+	}
+	&:after {
+	    clear: both;
+	}
+}
+
+.tic-h {
+    color: #4e9347;
+}
+
+.tic-ia {
+    color: #882b2b;
+}

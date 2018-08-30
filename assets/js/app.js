@@ -307,6 +307,10 @@ function zerarTabuleiro() {
 		turno = 30;
 		console.log("O humano começa");
 	}
+
+	// Interface
+
+	$(".tic-casa").removeClass("tic-h").removeClass("tic-ia").html("");
 }
 
 function passarTurno() {
@@ -314,7 +318,7 @@ function passarTurno() {
 		tabuleiro[iaIdeia] = 3;
 		turno = 30;
 		mostrar();
-		console.log("IA Marcou "+iaIdeia+"Agora é o turno do Jogador");
+		console.log("IA Marcou "+iaIdeia+". Agora é o turno do Jogador");
 	} else {
 		if (turno == 30) {
 			turno = 3;
@@ -327,8 +331,10 @@ function passarTurno() {
 }
 
 function humanoMarcar(local) {
-	tabuleiro[local] = 30;
-	passarTurno();
+	if (turno == 30) {
+		tabuleiro[local] = 30;
+		passarTurno();
+	}
 }
 
 function mostrar() {
@@ -353,8 +359,34 @@ function mostrar() {
 	console.log(tabuleiroMostrar[3]+tabuleiroMostrar[4]+tabuleiroMostrar[5]);
 	console.log(tabuleiroMostrar[6]+tabuleiroMostrar[7]+tabuleiroMostrar[8]);
 
+	// Interface
+
+	$(".tic-casa-"+iaIdeia).html("X").addClass("tic-ia");
+
 }
 
 
 // Começando
-zerarTabuleiro();
+
+
+
+$(function(){
+	$(".tic-casa").click(function(){
+		var casa = Number($(this).attr("casa"));
+		var conteudo = $(this).html();
+		console.log(casa);
+		console.log(conteudo);
+
+		if (conteudo == "" || conteudo == undefined) {
+			humanoMarcar(casa);
+			$(this).html("O").addClass("tic-h");
+			iaPensar();
+		}
+	});
+
+	zerarTabuleiro();
+	if (turno == 3) {
+		iaPensar();
+	}
+});
+
