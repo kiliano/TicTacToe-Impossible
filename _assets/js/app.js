@@ -4,6 +4,7 @@
 
 // Jogo da velha:
 
+// Checar possibilidade de vitória
 // Se o opotente ocupar 2 casas seguidas, ocupe a terceira
 // Se tiver algum movimento que cria duas linhas com duas casas ocupadas, faça ele (criando o empasse contra o inimigo)
 // Se o espaço do centro estiver vazio, marque lá
