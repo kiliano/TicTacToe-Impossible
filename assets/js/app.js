@@ -146,6 +146,86 @@ function iaPensar() {
 		}
 	}
 
+	// Tentativa de sinucagem pela diagonal, logo no começo do jogo
+
+	if (turno == 3) {
+
+		for (iaLinha = 1; iaLinha < 3; iaLinha++ ) {
+			casasAnalisadas();
+			
+			// Analisando
+			var linhaAnalisada = tabuleiro[iaCasasAnalisadas[0]]+tabuleiro[iaCasasAnalisadas[1]]+tabuleiro[iaCasasAnalisadas[2]];
+			if (linhaAnalisada == 63) {
+				if (tabuleiro[iaCasasAnalisadas[1]] == 3) {
+
+					// Primeira diagonal
+					if (iaLinha == 1 && tabuleiro[2] == 0 && tabuleiro[6] == 0) {
+						// Marcar em cruz
+						if (tabuleiro[1] == 0) {
+							iaIdeia = 1;
+							iaLinha = 9;
+							passarTurno();
+							console.log("Tentativa de sinucagem pela diagonal, logo no começo do jogo");
+						} else {
+							if (tabuleiro[3] == 0) {
+								iaIdeia = 3;
+								iaLinha = 9;
+								passarTurno();
+								console.log("Tentativa de sinucagem pela diagonal, logo no começo do jogo");
+							} else {
+								if (tabuleiro[5] == 0) {
+									iaIdeia = 5;
+									iaLinha = 9;
+									passarTurno();
+									console.log("Tentativa de sinucagem pela diagonal, logo no começo do jogo");
+								} else {
+									if (tabuleiro[7] == 0) {
+										iaIdeia = 7;
+										iaLinha = 9;
+										passarTurno();
+										console.log("Tentativa de sinucagem pela diagonal, logo no começo do jogo");
+									}
+								}
+							}
+						}
+					} else {
+						// Segunda diagonal
+						if (iaLinha == 2 && tabuleiro[0] == 0 && tabuleiro[8] == 0) {
+							// Marcar em cruz
+							if (tabuleiro[1] == 0) {
+								iaIdeia = 1;
+								iaLinha = 9;
+								passarTurno();
+								console.log("Tentativa de sinucagem pela diagonal, logo no começo do jogo");
+							} else {
+								if (tabuleiro[3] == 0) {
+									iaIdeia = 3;
+									iaLinha = 9;
+									passarTurno();
+									console.log("Tentativa de sinucagem pela diagonal, logo no começo do jogo");
+								} else {
+									if (tabuleiro[5] == 0) {
+										iaIdeia = 5;
+										iaLinha = 9;
+										passarTurno();
+										console.log("Tentativa de sinucagem pela diagonal, logo no começo do jogo");
+									} else {
+										if (tabuleiro[7] == 0) {
+											iaIdeia = 7;
+											iaLinha = 9;
+											passarTurno();
+											console.log("Tentativa de sinucagem pela diagonal, logo no começo do jogo");
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+	}
 
 
 	// 3 Se o humano puder sinucar
@@ -255,7 +335,7 @@ function iaPensar() {
 
 	// 8 Marque aleatoriamente um espaço vazio.
 	if (turno == 3) {
-		for (iaLinha = 1; iaLinha < 4; iaLinha++ ) {
+		for (iaLinha = 1; iaLinha < 9; iaLinha++ ) {
 			casasAnalisadas();
 			
 			// Analisando
