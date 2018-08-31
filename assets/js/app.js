@@ -146,6 +146,8 @@ function iaPensar() {
 		}
 	}
 
+
+
 	// 3 Se o humano puder sinucar
 
 	if (turno == 3) {
@@ -184,6 +186,14 @@ function iaPensar() {
 		}
 	}
 
+    // 7 Se o espaço do centro estiver vazio, marque lá
+	if (turno == 3) {
+		if (tabuleiro[4] == 0) {
+			iaIdeia = 4;
+			passarTurno();
+			console.log("Se o espaço do centro estiver vazio, marque lá");
+		}
+	}
 
 
 	// 5 Marcando a contrária.
@@ -213,9 +223,10 @@ function iaPensar() {
 	}
 
 
+
 	// 6 Se tiver uma quina vazia, preencha.
 	if (turno == 3) {
-		for (iaLinha = 7; iaLinha < 9; iaLinha++ ) {
+		for (iaLinha = 1; iaLinha < 3; iaLinha++ ) {
 			casasAnalisadas();
 			
 			// Analisando
@@ -239,14 +250,7 @@ function iaPensar() {
 		}
 	}
 
-	// 7 Se o espaço do centro estiver vazio, marque lá
-	if (turno == 3) {
-		if (tabuleiro[4] == 0) {
-			iaIdeia = 4;
-			passarTurno();
-			console.log("Se o espaço do centro estiver vazio, marque lá");
-		}
-	}
+	
 
 
 	// 8 Marque aleatoriamente um espaço vazio.
@@ -284,35 +288,37 @@ function iaPensar() {
 }
 
 function casasAnalisadas() {
-	// Linhas
+	// Diagonais
 	if (iaLinha == 1) {
-		iaCasasAnalisadas = new Array (0,1,2);
+		iaCasasAnalisadas = new Array (0,4,8);
 	}
 	if (iaLinha == 2) {
+		iaCasasAnalisadas = new Array (2,4,6);
+	}
+
+	// Linhas
+	if (iaLinha == 3) {
+		iaCasasAnalisadas = new Array (0,1,2);
+	}
+	if (iaLinha == 4) {
 		iaCasasAnalisadas = new Array (3,4,5);
 	}
-	if (iaLinha == 3) {
+	if (iaLinha == 5) {
 		iaCasasAnalisadas = new Array (6,7,8);
 	}
 
 	// Colunas
-	if (iaLinha == 4) {
+	if (iaLinha == 6) {
 		iaCasasAnalisadas = new Array (0,3,6);
 	}
-	if (iaLinha == 5) {
+	if (iaLinha == 7) {
 		iaCasasAnalisadas = new Array (1,4,7);
 	}
-	if (iaLinha == 6) {
+	if (iaLinha == 8) {
 		iaCasasAnalisadas = new Array (2,5,8);
 	}
 
-	// Diagonais
-	if (iaLinha == 7) {
-		iaCasasAnalisadas = new Array (0,4,8);
-	}
-	if (iaLinha == 8) {
-		iaCasasAnalisadas = new Array (2,4,6);
-	}
+	
 }
 
 function zerarTabuleiro() {
