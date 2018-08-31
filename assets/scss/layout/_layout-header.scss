@@ -1,47 +1,79 @@
-.tic-box {
-    background: #c8c8c8;
-    float: left;
-    position: absolute;
-    left: 49%;
-    top: 49%;
+
+
+// Interface
+
+body {
+    background: #222;
+    color: #fafafa;
+    
+    a {
+        color: #fafafa;
+        
+        &:hover, &:focus {
+            color: #fafafa;
+            text-decoration: none;
+        }
+    }
 }
 
-.tic-casa {
-    float: left;
-    background: #fff;
-    width: 20px;
-    height: 20px;
+.tic-topo {
+    height: 70vh;
+}
+
+.tic-bottom {
+    height: 30vh;
+}
+
+.tic-msg {
+    margin: 0 20px;
+    background: #292929;
+    color: #5e5b5b;
+    padding: 15px 20px;
+    overflow-x: auto;
+    height: 90%;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    
+    p {
+        font-size: 0.9em;
+        margin-bottom: 7px;
+        padding-bottom: 7px;
+        border-bottom: 1px solid #363535;
+        
+        &:last-child {
+            border-bottom: 0;
+        }
+        
+        &:first-child {
+            background: #363535;
+            padding-top: 9px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+}
+
+
+//Botões
+
+.tic-btn {
+    position: fixed;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+    background: #333;
     text-align: center;
-    margin: 1px;
-    color: #333;
+    line-height: 30px;
     font-weight: bold;
-    
-    &:hover {
-        background: #e0e0e0;
-        text-decoration: none;
-    }
-    
-    &:focus {
-        background: #fff;
-        text-decoration: none;
-    }
-    
 }
 
-.tic-linha {
-    &:before, &:after {
-	    content: "";    
-	    display: block;
-	}
-	&:after {
-	    clear: both;
-	}
+.tic-tutorial {
+    left: 10px;
 }
 
-.tic-h {
-    color: #4e9347;
-}
-
-.tic-ia {
-    color: #882b2b;
+.tic-reset {
+    right: 10px;
 }
