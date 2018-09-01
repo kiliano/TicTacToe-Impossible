@@ -1929,7 +1929,8 @@ body {
 
 .tic-box {
   padding: 5% 5%;
-  position: relative; }
+  position: relative;
+  height: 100%; }
 
 .tic-linha {
   float: left;
@@ -1970,7 +1971,8 @@ body {
   color: #55d1b6; }
 
 .tic-placar {
-  padding: 20px 50px; }
+  padding: 20px 50px;
+  overflow: hidden; }
   .tic-placar .tic-col {
     text-align: center;
     float: left;
