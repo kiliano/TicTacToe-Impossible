@@ -32,6 +32,21 @@ iaIdeia = 100;
 iaLinha = 1;
 iaCasasAnalisadas = new Array (0,0,0);
 
+vitorias = localStorage.getItem("ticVitorias");
+derrotas = localStorage.getItem("ticDerrotas");
+empates = localStorage.getItem("ticEmpates");
+
+if (vitorias == null) {
+	vitorias = 0;
+}
+
+if (derrotas == null) {
+	derrotas = 0;
+}
+
+if (empates == null) {
+	empates = 0;
+}
 
 
 // Ações
@@ -472,6 +487,10 @@ function vitoria() {
 			var linhaAnalisada = tabuleiro[iaCasasAnalisadas[0]]+tabuleiro[iaCasasAnalisadas[1]]+tabuleiro[iaCasasAnalisadas[2]];
 			if (linhaAnalisada == 90) {
 				log("O humano venceu. Mas isso é impossível.");
+				vitorias = (Number(vitorias) + 1);
+				$(".tic-vitorias strong").html(vitorias);
+				localStorage.setItem("ticVitorias", vitorias);
+
 				if (iaLinha == 1) {
 					$(".tic-vitoria").addClass("tic-diagonal1");
 				}
@@ -509,6 +528,9 @@ function vitoria() {
 			} else {
 				if (linhaAnalisada == 9) {
 					log("A máquina venceu.");
+					derrotas = (Number(derrotas) + 1);
+					$(".tic-derrotas strong").html(derrotas);
+					localStorage.setItem("ticDerrotas", derrotas);
 
 					if (iaLinha == 1) {
 						$(".tic-vitoria").addClass("tic-diagonal1");
@@ -551,6 +573,9 @@ function vitoria() {
 					log("Deu velha.");
 					iaLinha = 10;
 					turno = 100;
+					empates = (Number(empates) + 1);
+					$(".tic-empates strong").html(empates);
+					localStorage.setItem("ticEmpates", empates);
 			}
 		}
 
@@ -574,6 +599,10 @@ $(function(){
 	
 
 	zerarTabuleiro();
+
+	$(".tic-vitorias strong").html(vitorias);
+	$(".tic-derrotas strong").html(derrotas);
+	$(".tic-empates strong").html(empates);
 	
 	$(".tic-casa").click(function(){
 		var casaConteudo = $(this).html();
@@ -595,7 +624,4 @@ $(function(){
 		}
 
 	});
-
-
 });
-
