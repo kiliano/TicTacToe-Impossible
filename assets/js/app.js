@@ -414,6 +414,7 @@ function zerarTabuleiro() {
 	// Interface
 	$(".tic-msg").html("");
 	$(".tic-casa").removeClass("tic-h").removeClass("tic-ia").addClass("tic-livre").html("");
+	$(".tic-vitoria").removeClass("tic-linha1").removeClass("tic-linha2").removeClass("tic-linha3").removeClass("tic-coluna1").removeClass("tic-coluna2").removeClass("tic-coluna3").removeClass("tic-diagonal1").removeClass("tic-diagonal2");
 	turno = 3;
 
 	// IA
@@ -471,11 +472,75 @@ function vitoria() {
 			var linhaAnalisada = tabuleiro[iaCasasAnalisadas[0]]+tabuleiro[iaCasasAnalisadas[1]]+tabuleiro[iaCasasAnalisadas[2]];
 			if (linhaAnalisada == 90) {
 				log("O humano venceu. Mas isso é impossível.");
+				if (iaLinha == 1) {
+					$(".tic-vitoria").addClass("tic-diagonal1");
+				}
+
+				if (iaLinha == 2) {
+					$(".tic-vitoria").addClass("tic-diagonal2");
+				}
+
+				if (iaLinha == 3) {
+					$(".tic-vitoria").addClass("tic-linha1");
+				}
+
+				if (iaLinha == 4) {
+					$(".tic-vitoria").addClass("tic-linha2");
+				}
+
+				if (iaLinha == 5) {
+					$(".tic-vitoria").addClass("tic-linha3");
+				}
+
+				if (iaLinha == 6) {
+					$(".tic-vitoria").addClass("tic-coluna1");
+				}
+
+				if (iaLinha == 7) {
+					$(".tic-vitoria").addClass("tic-coluna2");
+				}
+
+				if (iaLinha == 8) {
+					$(".tic-vitoria").addClass("tic-coluna3");
+				}
 				iaLinha = 10;
 				turno = 100;
+
 			} else {
 				if (linhaAnalisada == 9) {
 					log("A máquina venceu.");
+
+					if (iaLinha == 1) {
+						$(".tic-vitoria").addClass("tic-diagonal1");
+					}
+
+					if (iaLinha == 2) {
+						$(".tic-vitoria").addClass("tic-diagonal2");
+					}
+
+					if (iaLinha == 3) {
+						$(".tic-vitoria").addClass("tic-linha1");
+					}
+
+					if (iaLinha == 4) {
+						$(".tic-vitoria").addClass("tic-linha2");
+					}
+
+					if (iaLinha == 5) {
+						$(".tic-vitoria").addClass("tic-linha3");
+					}
+
+					if (iaLinha == 6) {
+						$(".tic-vitoria").addClass("tic-coluna1");
+					}
+
+					if (iaLinha == 7) {
+						$(".tic-vitoria").addClass("tic-coluna2");
+					}
+
+					if (iaLinha == 8) {
+						$(".tic-vitoria").addClass("tic-coluna3");
+					}
 					iaLinha = 10;
 					turno = 100;
 				} 
@@ -488,7 +553,6 @@ function vitoria() {
 					turno = 100;
 			}
 		}
-		
 
 	}
 
@@ -524,6 +588,10 @@ $(function(){
 				$(this).html("O").addClass("tic-h");
 				iaPensar();
 			}
+		}
+
+		if (turno == 100) {
+			zerarTabuleiro();
 		}
 
 	});
