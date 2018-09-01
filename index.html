@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
 	
-	<title>Título</title>
+	<title>Master of Tic-Tac-Toe</title>
 	
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IT=edge,chrome=IE8">
@@ -86,10 +86,15 @@
 			?
 		</a>
 
-		<a href="javascript:void(0)" class="tic-reset tic-btn">
+		<a href="javascript:void(0)" onclick="zerarTabuleiro()" class="tic-reset tic-btn">
 			R
 		</a>
-		
+			
+			<div class="tic-placar">
+				<div class="tic-col tic-vitorias"><strong>0</strong><span>Vitórias</span></div>
+				<div class="tic-col tic-empates"><strong>0</strong><span>Empates</span></div>
+				<div class="tic-col tic-derrotas"><strong>0</strong><span>Derrotas</span></div>
+			</div>
 			<div class="tic-topo">
 				<div class="tic-box">
 					<div class="tic-linha">
@@ -113,20 +118,7 @@
 			</div>
 
 			<div class="tic-bottom">
-				<div class="tic-msg">
-					<p>Mensagem exemplo</p>
-					<p>Mensagem exemplo das das das dasd as</p>
-					<p>Mensagem exemplodas as dasdas das das</p>
-					<p>Mensagem exemplo asdas asdasd asd asd as</p>
-					<p>Mensagem exemplo asdas asdasd asd asd as</p>
-					<p>Mensagem exemplo asdas asdasd asd asd as</p>
-					<p>Mensagem exemplo asdas asdasd asd asd as</p>
-					<p>Mensagem exemplo asdas asdasd asd asd as</p>
-					<p>Mensagem exemplo asdas asdasd asd asd as</p>
-					<p>Mensagem exemplo asdas asdasd asd asd as</p>
-					<p>Mensagem exemplo asdas asdasd asd asd as</p>
-					<p>Mensagem exemplo asdas asdasd asd asd as</p>
-				</div>
+				<div class="tic-msg"></div>
 			</div>
 			
 		</div>

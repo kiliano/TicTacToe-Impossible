@@ -418,6 +418,7 @@ function zerarTabuleiro() {
 	// Interface
 
 	$(".tic-casa").removeClass("tic-h").removeClass("tic-ia").html("");
+	$(".tic-msg").html("");
 }
 
 function passarTurno() {
@@ -442,10 +443,13 @@ function humanoMarcar(local) {
 	}
 }
 
-// Começando
+// Criando log
 
+function log(msg) {
+	$(".tic-msg").prepend("<p>"+msg+"</p>");
+}
 
-
+// Interface
 $(function(){
 	$(".tic-casa").click(function(){
 		var casa = Number($(this).attr("casa"));

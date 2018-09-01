@@ -16,12 +16,25 @@ body {
     }
 }
 
+.tic-placar {
+    height: 10vh;
+    &:before, &:after {
+        content: "";    
+        display: block;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
 .tic-topo {
-    height: 70vh;
+    height: 60vh;
+    overflow: hidden;
 }
 
 .tic-bottom {
     height: 30vh;
+    overflow: hidden;
 }
 
 .tic-msg {
@@ -76,4 +89,94 @@ body {
 
 .tic-reset {
     right: 10px;
+}
+
+
+// Layout
+
+$corLinhas: #666;
+
+.tic-box {
+    padding: 5% 5%;
+}
+
+.tic-linha {
+    float: left;
+    width: 90%;
+    margin-left: 5%;
+    height: 15vh;
+    &:before, &:after {
+        content: "";    
+        display: block;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+.tic-casa {
+    float: left;
+    height: 100%;
+    width: 33.3333%;
+    text-align: center;
+    line-height: 15vh;
+    font-size: 3em;
+    font-weight: bold;
+    
+}
+
+.tic-casa-1, .tic-casa-7 {
+    border-left: 2px solid $corLinhas;
+    border-right: 2px solid $corLinhas;
+}
+
+.tic-casa-3, .tic-casa-5 {
+    border-top: 2px solid $corLinhas;
+    border-bottom: 2px solid $corLinhas;
+}
+
+.tic-casa-4 {
+    border: 2px solid $corLinhas;
+}
+
+.tic-ia, .tic-ia:hover, .tic-ia:focus {
+    color: #ffbb87;
+}
+
+.tic-h, .tic-h:hover, .tic-h:focus {
+    color: #55d1b6;
+}
+
+
+.tic-placar {
+    padding: 20px 50px;
+    .tic-col {
+        text-align: center;
+        float: left;
+        width: 33.33%;
+        
+        > strong {
+            display: block;
+            font-size: 1.4em;
+        }
+        
+        > span {
+            display: block;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 0.6em;
+        }
+    }
+}
+
+.tic-vitorias {
+    color: #78d5cc;
+}
+
+.tic-empates {
+    color: #ece2a0;
+}
+
+.tic-derrotas {
+    color: #d59c78;
 }
