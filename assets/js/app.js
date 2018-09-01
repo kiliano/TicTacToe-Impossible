@@ -18,6 +18,8 @@
 	// 0 = Antes de jogar. 3 = ia. 30 = humano. 100 = jogo finalizado
 turno = 3;
 
+iaVelocidade = 500;
+
 // 0 = não marcado. 3 ia marcou. 30 humano marcou.
 tabuleiro = new Array(0,0,0,0,0,0,0,0,0);
 // exemplo: tabuleiro[2] = terceiro numero
@@ -383,7 +385,7 @@ function iaPensar() {
 		vitoria();
 
 		// log("Ia Marcou "+iaIdeia);
-	}, 500);
+	}, iaVelocidade);
 
 }
 
@@ -590,6 +592,25 @@ function vitoria() {
 
 function log(msg) {
 	$(".tic-msg").prepend("<p>"+msg+"</p>");
+}
+
+// Debug
+
+function teste() {
+	iaVelocidade = 0;
+
+	setInterval(function(){
+		if (turno == 30) {
+			var random = Math.floor(Math.random() * 9);
+			$(".tic-casa-"+random).click();
+		}
+
+		if (turno == 100) {
+			zerarTabuleiro();
+		}
+	}, 0);
+
+	
 }
 
 
