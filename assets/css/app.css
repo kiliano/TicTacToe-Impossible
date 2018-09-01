@@ -1878,7 +1878,8 @@ body {
 
 .tic-topo {
   height: 60vh;
-  overflow: hidden; }
+  overflow: hidden;
+  position: relative; }
 
 .tic-bottom {
   height: 30vh;
@@ -1907,7 +1908,8 @@ body {
       border-radius: 5px;
       margin-bottom: 10px;
       padding-left: 15px;
-      padding-right: 15px; }
+      padding-right: 15px;
+      color: #999; }
 
 .tic-btn {
   position: fixed;
@@ -1926,7 +1928,8 @@ body {
   right: 10px; }
 
 .tic-box {
-  padding: 5% 5%; }
+  padding: 5% 5%;
+  position: relative; }
 
 .tic-linha {
   float: left;
@@ -1946,7 +1949,8 @@ body {
   text-align: center;
   line-height: 15vh;
   font-size: 3em;
-  font-weight: bold; }
+  font-weight: bold;
+  position: relative; }
 
 .tic-casa-1, .tic-casa-7 {
   border-left: 2px solid #666;
@@ -1988,5 +1992,95 @@ body {
 
 .tic-derrotas {
   color: #d59c78; }
+
+.tic-casa:before {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 12px;
+  line-height: 1;
+  color: #555; }
+
+.tic-casa-0:before {
+  content: "1"; }
+
+.tic-casa-1:before {
+  content: "2"; }
+
+.tic-casa-2:before {
+  content: "3"; }
+
+.tic-casa-3:before {
+  content: "4"; }
+
+.tic-casa-4:before {
+  content: "5"; }
+
+.tic-casa-5:before {
+  content: "6"; }
+
+.tic-casa-6:before {
+  content: "7"; }
+
+.tic-casa-7:before {
+  content: "8"; }
+
+.tic-casa-8:before {
+  content: "9"; }
+
+.tic-vitoria {
+  display: none;
+  width: 100%;
+  height: 15px;
+  background: #333;
+  position: absolute;
+  z-index: 10; }
+  .tic-vitoria.tic-linha1 {
+    top: 16%;
+    left: 0;
+    display: block; }
+  .tic-vitoria.tic-linha2 {
+    top: 45%;
+    left: 0;
+    display: block; }
+  .tic-vitoria.tic-linha3 {
+    top: 65%;
+    left: 0;
+    display: block; }
+  .tic-vitoria.tic-coluna1 {
+    top: 35%;
+    left: -27%;
+    display: block;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    transform: rotate(90deg); }
+  .tic-vitoria.tic-coluna2 {
+    top: 35%;
+    left: 0%;
+    display: block;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    transform: rotate(90deg); }
+  .tic-vitoria.tic-coluna3 {
+    top: 35%;
+    left: 27%;
+    display: block;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    transform: rotate(90deg); }
+  .tic-vitoria.tic-diagonal1 {
+    top: 45%;
+    left: 0;
+    display: block;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg); }
+  .tic-vitoria.tic-diagonal2 {
+    top: 45%;
+    left: 0;
+    display: block;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    transform: rotate(135deg); }
 
 /*# sourceMappingURL=app.css.map */
